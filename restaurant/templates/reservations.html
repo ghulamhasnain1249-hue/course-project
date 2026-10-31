@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Reservations | Little Lemon{% endblock %}
+{% block content %}
+<h1>Reservations</h1>
+<table>
+  <thead>
+    <tr><th>Name</th><th>Date</th><th>Time</th><th>Booking ID</th></tr>
+  </thead>
+  <tbody id="reservations-body"></tbody>
+</table>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/booking.js' %}" defer></script>{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Book a Table | Little Lemon{% endblock %}
+{% block content %}
+<h1>Book a table</h1>
+<form id="booking-form">
+  {% csrf_token %}
+  <label for="first_name">First name</label>
+  <input type="text" id="first_name" name="first_name" maxlength="255" required>
+
+  <label for="reservation_date">Reservation date</label>
+  <input type="date" id="reservation_date" name="reservation_date" required>
+
+  <label for="reservation_slot">Reservation slot</label>
+  <select id="reservation_slot" name="reservation_slot" required></select>
+
+  <button type="submit">Book</button>
+  <p id="booking-message" role="status" aria-live="polite"></p>
+</form>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/booking.js' %}" defer></script>{% endblock %}
